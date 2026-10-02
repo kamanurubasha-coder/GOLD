@@ -3,3 +3,4 @@ Thumbs.db
 *.log
 scratch/
 .system_generated/
+__pycache__/
