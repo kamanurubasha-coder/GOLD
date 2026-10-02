@@ -1,0 +1,437 @@
+/* AR JEWELLERY - Professional White & Royal Gold Luxury Theme */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Pristine White & Royal Gold Palette */
+  --bg-main: #FAF8F5;
+  --bg-card: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-ivory: #FFFDF9;
+  --bg-cream: #F6F1E7;
+  --bg-gold-light: #FBF4E2;
+  
+  --gold-primary: #C8961E;
+  --gold-dark: #996515;
+  --gold-light: #FEF08A;
+  --gold-accent: #D4AF37;
+  --gold-champagne: #EED79D;
+  
+  --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #B8860B 50%, #8C6212 100%);
+  --gold-btn: linear-gradient(135deg, #DFB743 0%, #C29424 50%, #9A6A12 100%);
+  --gold-btn-hover: linear-gradient(135deg, #E9C75B 0%, #D0A231 50%, #AD7917 100%);
+  
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6B7280;
+  --text-gold: #996515;
+  
+  --border-gold-subtle: #EADBBA;
+  --border-gold-bright: #D4AF37;
+  --border-card: #EFE8D8;
+  
+  --shadow-gold: 0 10px 25px -5px rgba(212, 175, 55, 0.15), 0 8px 10px -6px rgba(212, 175, 55, 0.1);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Luxury Gold Text Gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #996515 0%, #D4AF37 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-bright {
+  color: #B47C16;
+}
+
+.bg-gold-gradient {
+  background: var(--gold-gradient);
+}
+
+.bg-gold-btn {
+  background: var(--gold-btn);
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+
+.bg-gold-btn:hover {
+  background: var(--gold-btn-hover);
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.35);
+  transform: translateY(-1px);
+}
+
+.border-gold-subtle {
+  border: 1px solid var(--border-gold-subtle);
+}
+
+.border-gold-bright {
+  border: 1px solid var(--border-gold-bright);
+}
+
+/* Shimmer Animation for Badges & Highlights */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-badge {
+  background: linear-gradient(90deg, #996515 0%, #D4AF37 50%, #996515 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 4s infinite linear;
+}
+
+/* Custom Scrollbar for Luxury Look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F5EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8C39B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8860B;
+}
+
+/* Shopping Cart Slide-out Drawer */
+#cartDrawer {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#cartDrawer.translate-x-full {
+  transform: translateX(100%);
+}
+
+#cartDrawer.translate-x-0 {
+  transform: translateX(0);
+}
+
+/* Wishlist Heart Toggle */
+.wishlist-btn.active svg {
+  fill: #E11D48;
+  color: #E11D48;
+  filter: drop-shadow(0 0 6px rgba(225, 29, 72, 0.4));
+  transform: scale(1.15);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Toast Notification */
+#shopToast {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-floating {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-floating:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* Luxury Range Slider Styling */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: #EADBBA;
+  border-radius: 6px;
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #D4AF37, #996515);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(153, 101, 21, 0.4);
+  transition: transform 0.15s ease;
+  border: 2px solid #ffffff;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Pulse animation for Live Rate dots */
+@keyframes ratePulse {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+.rate-pulse {
+  animation: ratePulse 2s infinite ease-in-out;
+}
+
+/* Modal Scale Animation */
+@keyframes modalScaleIn {
+  0% { opacity: 0; transform: scale(0.94) translateY(12px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-scale-in {
+  animation: modalScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Product Card Hover Effect */
+.product-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(212, 175, 55, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.product-card .product-img-wrapper {
+  overflow: hidden;
+}
+
+.product-card img {
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover img {
+  transform: scale(1.07);
+}
+
+/* Order Status Stepper Line */
+.step-completed {
+  border-color: #059669;
+  color: #059669;
+}
+
+.step-active {
+  border-color: #B8860B;
+  color: #B8860B;
+  box-shadow: 0 0 10px rgba(184, 134, 11, 0.3);
+}
+
+/* Admin Dashboard Specific */
+.admin-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-gold-subtle);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+}
+
+.admin-card:hover {
+  border-color: var(--gold-accent);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+}
+
+/* ============================================================
+   LUXURY JEWELLERY ANIMATION SUITE - ROYAL WHITE & GOLD
+   ============================================================ */
+
+/* 1. Golden Gleam Sheen Effect on Buttons and Highlights */
+.gold-gleam {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-gleam::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 80%;
+  height: 200%;
+  background: linear-gradient(
+    90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.45) 50%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: goldGleamSweep 4.5s infinite cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes goldGleamSweep {
+  0% { left: -150%; }
+  35% { left: 160%; }
+  100% { left: 160%; }
+}
+
+/* 2. Hero Jewelry Floating Breathing Motion */
+.hero-float {
+  animation: heroFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes heroFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.4deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+/* 3. Golden Ambient Aura Glow behind Hero Showcase */
+.gold-aura-glow {
+  position: absolute;
+  inset: -18px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(254, 243, 199, 0.12) 45%, transparent 70%);
+  filter: blur(28px);
+  z-index: 0;
+  pointer-events: none;
+  animation: goldAuraPulse 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes goldAuraPulse {
+  0% { opacity: 0.55; transform: scale(0.96); }
+  100% { opacity: 0.95; transform: scale(1.05); }
+}
+
+/* 4. WhatsApp Floating Button Ripple Rings */
+.wa-pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  opacity: 0;
+  pointer-events: none;
+  animation: waRipple 2.4s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.wa-pulse-ring-2 {
+  animation-delay: 1.2s;
+}
+
+@keyframes waRipple {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
+/* 5. Logo Halo Glow Pulse */
+.logo-glow-ring {
+  box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5);
+  animation: logoGlow 3s infinite ease-in-out;
+}
+
+@keyframes logoGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+/* 6. Twinkling Sparkle Star */
+.sparkle-twinkle {
+  display: inline-block;
+  animation: sparkleTwinkle 2.5s infinite ease-in-out;
+  color: #D4AF37;
+  filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.6));
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25) rotate(15deg);
+  }
+}
+
+.sparkle-delayed {
+  animation-delay: 1.25s;
+}
+
+/* 7. Elastic Badge Pop Animation */
+.badge-pop {
+  animation: badgePop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes badgePop {
+  0% { transform: scale(0.6); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* 8. Smooth Scroll Reveal (Intersection Observer) */
+.fade-up-init {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-up-init.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 9. Golden Celebration Confetti */
+.gold-confetti-particle {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 2px;
+  animation: confettiFall 2.8s linear forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    opacity: 1;
+    transform: translateY(-20px) rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg) scale(0.4);
+  }
+}
+

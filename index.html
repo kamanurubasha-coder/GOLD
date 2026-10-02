@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR JEWELLERY | Luxury Gold & Diamond Jewellery Online Shopping</title>
+  <meta name="description" content="Shop 100% BIS 916 Hallmarked Gold Jewellery online at AR Jewellery. Bridal Harams, Bangles, Rings, Gold Coins with free insured delivery and transparent live gold prices.">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              50: '#FFFDF5',
+              100: '#FBF4E2',
+              200: '#F6E4B6',
+              300: '#F0D185',
+              400: '#E4B84D',
+              500: '#C8961E',
+              600: '#B8860B',
+              700: '#996515',
+              800: '#754B0B',
+              900: '#4D3004',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom White & Gold Theme CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#FAF8F5] text-stone-900 antialiased selection:bg-amber-400 selection:text-stone-950 font-sans">
+
+  <!-- TOP PROMO & UTILITY ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-[#FFFDF9] via-[#FAF3E2] to-[#FFFDF9] border-b border-[#EADBBA] text-xs py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2 overflow-hidden">
+        <span class="px-2.5 py-0.5 rounded-full bg-amber-700 text-white font-bold text-[10px] tracking-wider uppercase shadow-sm">
+          Grand Launch Offer
+        </span>
+        <span class="text-amber-900 font-medium truncate">
+          ✨ Use Code <strong>'AR10'</strong> for Flat 10% Off on Making Charges! Free Insured Delivery Across India
+        </span>
+      </div>
+
+      <div class="flex items-center gap-4 text-stone-600 text-xs">
+        <span class="hidden md:inline flex items-center gap-1 text-emerald-700 font-semibold">
+          <span>🛡️</span> 100% BIS 916 Hallmark Certified
+        </span>
+        <span class="hidden sm:inline text-stone-300">|</span>
+        <div class="hidden sm:flex items-center gap-1 text-stone-700 font-semibold">
+          <span>📞 Dedicated Customer Care Desk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORE OWNER EXCLUSIVE TOP TOOLBAR (ONLY SHOWN WHEN LOGGED IN AS OWNER) -->
+  <div id="adminOwnerBar" class="hidden bg-stone-900 text-amber-300 px-4 py-2 text-xs border-b border-amber-500/50 shadow-md">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-amber-400 font-bold">👑 Store Owner Session:</span>
+        <span class="text-white font-semibold">Asma (Administrator)</span>
+        <span class="px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-300 text-[10px] border border-emerald-500/40">Portal Active</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="openAdminPortal()" class="px-3 py-1 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold rounded-lg transition text-[11px] flex items-center gap-1.5 cursor-pointer">
+          <span>📊 Open Admin Dashboard</span>
+          <span id="adminNotifBadge" class="hidden px-1.5 py-0.5 rounded-full bg-rose-600 text-white text-[9px] font-black animate-pulse">0</span>
+        </button>
+        <button onclick="closeAdminPortal()" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 font-semibold rounded-lg transition text-[11px] cursor-pointer">
+          🛒 Customer Store View
+        </button>
+        <button onclick="logoutUser()" class="px-3 py-1 bg-rose-900 hover:bg-rose-800 text-rose-200 font-semibold rounded-lg transition text-[11px] cursor-pointer">
+          🚪 Owner Logout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EADBBA] shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- Brand Logo & Name: AR JEWELLERY -->
+        <a href="#home" class="flex items-center gap-3 shrink-0 group">
+          <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-full p-0.5 bg-gradient-to-tr from-amber-600 via-yellow-400 to-amber-600 shadow-md logo-glow-ring">
+            <img src="assets/images/logo.jpg" alt="AR JEWELLERY Logo" class="w-full h-full object-cover rounded-full">
+          </div>
+          <div>
+            <span class="font-serif text-xl sm:text-2xl font-black tracking-wider text-stone-900 block group-hover:text-amber-700 transition">
+              AR JEWELLERY
+            </span>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-amber-700 font-bold block">
+              Luxury Gold & Diamonds
+            </span>
+          </div>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="hidden md:flex flex-1 max-w-md mx-4">
+          <div class="relative w-full">
+            <input 
+              type="text" 
+              id="productSearch" 
+              placeholder="Search 5000+ designs in gold harams, bangles, diamond rings..." 
+              class="w-full bg-[#FAF8F5] border border-[#EADBBA] focus:border-amber-600 rounded-full py-2.5 pl-10 pr-4 text-xs text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-amber-500 transition shadow-inner">
+            <svg class="w-4 h-4 text-stone-400 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold text-stone-700">
+          <a href="#shopCatalog" class="hover:text-amber-700 transition py-1">Collections</a>
+          <a href="#ratesSection" class="hover:text-amber-700 transition py-1 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 rate-pulse"></span>
+            <span>Live Rates</span>
+          </a>
+          <a href="#calculator" class="hover:text-amber-700 transition py-1">Gold Calculator</a>
+          <a href="#aboutSection" class="hover:text-amber-700 transition py-1">About Us</a>
+        </nav>
+
+        <!-- Right Side Utility Icons -->
+        <div class="flex items-center gap-3">
+          
+          <!-- Wishlist Button -->
+          <button onclick="openWishlistModal()" class="relative p-2 text-stone-600 hover:text-amber-800 transition cursor-pointer" title="My Wishlist">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+            <span id="wishlistCountBadge" class="hidden absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-rose-600 text-white text-[9px] font-black flex items-center justify-center shadow">0</span>
+          </button>
+
+          <!-- Cart Bag Button -->
+          <button onclick="toggleCartDrawer(true)" class="relative p-2 text-stone-600 hover:text-amber-800 transition cursor-pointer" title="Shopping Bag">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <span id="cartCountBadge" class="hidden absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-amber-600 text-white text-[9px] font-black flex items-center justify-center shadow">0</span>
+          </button>
+
+          <!-- User Authentication Profile Dropdown / Login -->
+          <div class="relative">
+            <!-- 1. Guest View (Not Logged In) -->
+            <div id="headerGuestBox">
+              <button 
+                onclick="openAuthModal('customer-login')" 
+                class="px-4 py-2 rounded-full bg-gold-btn text-white font-bold text-xs shadow hover:shadow-md transition flex items-center gap-1.5 cursor-pointer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+                <span>Login / Register</span>
+              </button>
+            </div>
+
+            <!-- 2. Logged In Customer View -->
+            <div id="headerUserBox" class="hidden">
+              <button 
+                onclick="toggleProfileDropdown()" 
+                class="flex items-center gap-2 p-1.5 rounded-full hover:bg-stone-100 transition border border-[#EADBBA] cursor-pointer">
+                <div id="headerUserAvatar" class="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-600 to-yellow-500 text-white font-black text-xs flex items-center justify-center shadow">
+                  U
+                </div>
+                <span id="headerUserName" class="hidden sm:inline text-xs font-bold text-stone-800 max-w-[90px] truncate">
+                  Customer
+                </span>
+                <svg class="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu for Logged In Customer (EXACT 5 BUTTONS REQUIRED BY USER) -->
+              <div id="profileDropdownMenu" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-[#EADBBA] py-2 z-50 text-xs">
+                <div class="px-4 py-2.5 border-b border-stone-100">
+                  <div class="font-bold text-stone-900">My Customer Account</div>
+                  <div class="text-[10px] text-stone-500">Verified Member</div>
+                </div>
+
+                <!-- 1. My Preferences -->
+                <button onclick="openPreferencesModal()" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-stone-800 flex items-center gap-2.5 transition font-medium cursor-pointer">
+                  <span class="text-base">⚙️</span> <span>My Preferences</span>
+                </button>
+
+                <!-- 2. My Orders -->
+                <button onclick="openOrdersModal()" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-stone-800 flex items-center gap-2.5 transition font-medium cursor-pointer">
+                  <span class="text-base">📦</span> <span>My Orders</span>
+                </button>
+
+                <!-- 3. Manage Address -->
+                <button onclick="openAddressModal()" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-stone-800 flex items-center gap-2.5 transition font-medium cursor-pointer">
+                  <span class="text-base">📍</span> <span>Manage Address</span>
+                </button>
+
+                <!-- 4. My Saved Wishlist -->
+                <button onclick="openWishlistModal()" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-stone-800 flex items-center gap-2.5 transition font-medium cursor-pointer">
+                  <span class="text-base">❤️</span> <span>My Saved Wishlist</span>
+                </button>
+
+                <!-- 5. Logout -->
+                <div class="border-t border-stone-100 mt-1 pt-1">
+                  <button onclick="logoutUser()" class="w-full text-left px-4 py-2.5 hover:bg-rose-50 text-rose-700 flex items-center gap-2.5 transition font-bold cursor-pointer">
+                    <span class="text-base">🚪</span> <span>Logout</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button id="mobileMenuBtn" class="lg:hidden p-2 text-stone-700 hover:text-amber-800 cursor-pointer" title="Open Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-[#EADBBA] px-4 py-3 space-y-2 text-xs font-semibold">
+      <a href="#shopCatalog" class="block py-2 text-stone-800 hover:text-amber-700">Explore Collections</a>
+      <a href="#ratesSection" class="block py-2 text-stone-800 hover:text-amber-700">Live Bullion Rates</a>
+      <a href="#calculator" class="block py-2 text-stone-800 hover:text-amber-700">Gold Price Calculator</a>
+      <a href="#aboutSection" class="block py-2 text-stone-800 hover:text-amber-700">About Store & Heritage</a>
+    </div>
+  </header>
+
+  <!-- TODAY'S LIVE GOLD & SILVER RATES TICKER BAR -->
+  <section id="ratesSection" class="py-6 bg-white border-b border-[#EADBBA] fade-up-init">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-emerald-500 rate-pulse"></span>
+          <h2 class="text-xs uppercase tracking-widest font-black text-amber-800">
+            Today's Live Bullion Market Rates (Govt Approved & Verified)
+          </h2>
+        </div>
+        <div class="text-[11px] text-stone-500 flex items-center gap-2">
+          <span>Updated Daily at 10:00 AM IST</span>
+          <span>•</span>
+          <span class="text-emerald-700 font-semibold">100% Transparent Hallmarking Pricing</span>
+        </div>
+      </div>
+
+      <!-- Rate Cards Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        <!-- 22K -->
+        <div class="bg-[#FFFDF9] border border-[#EADBBA] rounded-2xl p-4 text-center shadow-sm hover:border-amber-400 hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+          <span class="text-[11px] font-bold text-stone-600 uppercase tracking-wider">22K Gold (916 Hallmark)</span>
+          <div class="text-2xl sm:text-3xl font-serif font-black text-amber-800 mt-1" id="rate22kGram">₹7,750</div>
+          <div class="text-[11px] text-stone-500 mt-0.5">per gram (Jewellery Standard)</div>
+        </div>
+
+        <!-- 24K -->
+        <div class="bg-[#FFFDF9] border border-[#EADBBA] rounded-2xl p-4 text-center shadow-sm hover:border-amber-400 hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+          <span class="text-[11px] font-bold text-stone-600 uppercase tracking-wider">24K Pure Gold (999 Mint)</span>
+          <div class="text-2xl sm:text-3xl font-serif font-black text-stone-900 mt-1" id="rate24kGram">₹8,450</div>
+          <div class="text-[11px] text-stone-500 mt-0.5">per gram (Fine Bullion)</div>
+        </div>
+
+        <!-- 18K -->
+        <div class="bg-[#FFFDF9] border border-[#EADBBA] rounded-2xl p-4 text-center shadow-sm hover:border-amber-400 hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+          <span class="text-[11px] font-bold text-stone-600 uppercase tracking-wider">18K Diamond Gold</span>
+          <div class="text-2xl sm:text-3xl font-serif font-black text-amber-900 mt-1" id="rate18kGram">₹6,340</div>
+          <div class="text-[11px] text-stone-500 mt-0.5">per gram (Studded Jewellery)</div>
+        </div>
+
+        <!-- Silver -->
+        <div class="bg-[#FFFDF9] border border-stone-200 rounded-2xl p-4 text-center shadow-sm hover:border-stone-400 hover:shadow-md transition duration-300 transform hover:-translate-y-1">
+          <span class="text-[11px] font-bold text-stone-600 uppercase tracking-wider">Pure Silver (999)</span>
+          <div class="text-2xl sm:text-3xl font-serif font-black text-stone-800 mt-1" id="rateSilverGram">₹98</div>
+          <div class="text-[11px] text-stone-500 mt-0.5">per gram (₹98,000 / kg)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LUXURY HERO BANNER SECTION (WHITE & GOLD) -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6ED] to-[#FAF8F5] py-16 sm:py-24 border-b border-[#EADBBA]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold shadow-sm">
+            <span class="sparkle-twinkle">✨</span>
+            <span class="tracking-wide uppercase">New Bridal & Festive Collection 2026</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-black text-stone-900 leading-[1.15]">
+            Handcrafted Royal <span class="text-gold-gradient block sm:inline">Gold Jewellery</span> For Generations
+          </h1>
+
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+            Explore South India's finest 22K 916 BIS Hallmarked bridal sets, antique temple necklaces, daily wear bangles, and certified diamond jewellery. Every jewel carries transparent pricing, zero wastage guarantee, and insured doorstep delivery across India.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+            <a href="#shopCatalog" class="px-7 py-3.5 rounded-full bg-gold-btn text-white font-black text-xs uppercase tracking-wider shadow-lg hover:shadow-xl transition gold-gleam">
+              Explore Collections
+            </a>
+            <a href="#calculator" class="px-6 py-3.5 rounded-full bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs uppercase tracking-wider border border-[#EADBBA] shadow-sm transition">
+              Live Price Calculator
+            </a>
+            <button onclick="openWhatsAppQueryModal('I want to inquire about custom bridal gold ornaments')" class="px-5 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow flex items-center gap-2 transition cursor-pointer">
+              <span>💬 WhatsApp Inquiries</span>
+            </button>
+          </div>
+
+          <!-- Feature Pills -->
+          <div class="pt-6 grid grid-cols-3 gap-3 border-t border-[#EADBBA]/60 text-center">
+            <div class="p-2 bg-white rounded-xl border border-stone-200 shadow-sm hover:border-amber-300 transition">
+              <div class="text-base sm:text-lg">🛡️</div>
+              <div class="text-[11px] font-bold text-stone-900 mt-1">100% BIS Hallmarked</div>
+              <div class="text-[10px] text-stone-500">Government Certified</div>
+            </div>
+            <div class="p-2 bg-white rounded-xl border border-stone-200 shadow-sm hover:border-amber-300 transition">
+              <div class="text-base sm:text-lg">🚚</div>
+              <div class="text-[11px] font-bold text-stone-900 mt-1">Insured Transit</div>
+              <div class="text-[10px] text-stone-500">Free Doorstep Delivery</div>
+            </div>
+            <div class="p-2 bg-white rounded-xl border border-stone-200 shadow-sm hover:border-amber-300 transition">
+              <div class="text-base sm:text-lg">💎</div>
+              <div class="text-[11px] font-bold text-stone-900 mt-1">Direct Master Pricing</div>
+              <div class="text-[10px] text-stone-500">Zero Middlemen</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Image Display -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md">
+            <!-- Golden Aura Glow -->
+            <div class="gold-aura-glow"></div>
+
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white hero-float relative z-10">
+              <img 
+                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80" 
+                alt="AR JEWELLERY Bridal Collection" 
+                class="w-full h-full object-cover">
+            </div>
+
+            <!-- Floating Hallmark Badge -->
+            <div class="absolute -bottom-5 -left-5 bg-white border border-[#EADBBA] p-3.5 rounded-2xl shadow-xl flex items-center gap-3 z-20">
+              <div class="w-12 h-12 rounded-full p-0.5 bg-gradient-to-tr from-amber-600 to-yellow-400 shadow-md logo-glow-ring">
+                <img src="assets/images/logo.jpg" alt="Logo" class="w-full h-full object-cover rounded-full">
+              </div>
+              <div>
+                <div class="text-xs font-bold text-stone-900">AR JEWELLERY</div>
+                <div class="text-[10px] text-emerald-700 font-bold">100% BIS 916 Certified</div>
+              </div>
+            </div>
+
+            <!-- Twinkling Star Accents -->
+            <div class="absolute -top-3 -right-3 text-2xl sparkle-twinkle z-20 select-none">✨</div>
+            <div class="absolute top-1/3 -left-6 text-xl sparkle-twinkle sparkle-delayed z-20 select-none">✨</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN SHOPPING CATALOG SECTION (WHITE & GOLD) -->
+  <section id="shopCatalog" class="py-16 bg-[#FAF8F5] fade-up-init">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Title & Search summary -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 pb-6 border-b border-[#EADBBA]">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900">
+            Exclusive Handcrafted Gold Jewellery Catalog
+          </h2>
+          <p class="text-xs text-stone-500 mt-1" id="productCountDisplay">
+            Loading certified gold ornaments...
+          </p>
+        </div>
+
+        <!-- Sort Select Dropdown -->
+        <div class="flex items-center gap-3">
+          <label class="text-xs text-stone-600 font-bold uppercase tracking-wider">Sort By:</label>
+          <select id="sortProducts" class="bg-white border border-[#EADBBA] rounded-xl py-2 px-3 text-xs text-stone-800 focus:outline-none focus:border-amber-600 shadow-sm">
+            <option value="featured">Featured & Popular</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="weight-asc">Weight: Light to Heavy</option>
+            <option value="weight-desc">Weight: Heavy to Light</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto py-5 scrollbar-none">
+        <button class="filter-btn active px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap bg-gold-btn text-white shadow transition cursor-pointer" data-category="all">
+          All Collections
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap bg-white text-stone-700 border border-stone-200 hover:border-amber-500 transition cursor-pointer" data-category="bridal">
+          Bridal Sets
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap bg-white text-stone-700 border border-stone-200 hover:border-amber-500 transition cursor-pointer" data-category="necklace">
+          Necklaces & Harams
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap bg-white text-stone-700 border border-stone-200 hover:border-amber-500 transition cursor-pointer" data-category="bangles">
+          Bangles & Kadas
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap bg-white text-stone-700 border border-stone-200 hover:border-amber-500 transition cursor-pointer" data-category="earrings">
+          Earrings & Jhumkas
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap bg-white text-stone-700 border border-stone-200 hover:border-amber-500 transition cursor-pointer" data-category="rings">
+          Rings & Solitaires
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap bg-white text-stone-700 border border-stone-200 hover:border-amber-500 transition cursor-pointer" data-category="coins">
+          24K Gold Coins
+        </button>
+      </div>
+
+      <!-- PRODUCT CARDS GRID -->
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
+        <!-- Rendered by JavaScript renderProducts() -->
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE GOLD PRICE CALCULATOR SECTION -->
+  <section id="calculator" class="py-16 bg-white border-t border-b border-[#EADBBA] fade-up-init">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs uppercase font-bold text-amber-800 tracking-widest">
+          Transparent Cost Estimator
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 mt-1">
+          Interactive Live Gold Price Calculator
+        </h2>
+        <p class="text-xs text-stone-500 mt-2">
+          Calculate the exact cost of your custom gold jewellery based on current market rate, net weight, making charges, and 3% GST.
+        </p>
+      </div>
+
+      <div class="bg-[#FFFDF9] border border-[#EADBBA] rounded-3xl p-6 sm:p-10 shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Left Controls -->
+          <div class="space-y-5">
+            <!-- Karat Selection -->
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+                Select Gold Karat Purity
+              </label>
+              <select id="calcKarat" onchange="calculateGoldPrice()" class="w-full bg-white border border-[#EADBBA] rounded-xl p-3 text-xs font-bold text-stone-800 focus:outline-none focus:border-amber-600">
+                <option value="22" selected>22K Gold (916 BIS Hallmark) - Standard Jewellery</option>
+                <option value="24">24K Gold (999 Pure Bullion) - Coins & Bars</option>
+                <option value="18">18K Gold - Diamond Studded Jewellery</option>
+              </select>
+            </div>
+
+            <!-- Weight Input & Slider -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-stone-700">Net Gold Weight (Grams)</label>
+                <div class="flex items-center gap-1">
+                  <input type="number" id="calcWeight" value="25" min="1" max="500" step="0.1" oninput="calculateGoldPrice()" class="w-20 bg-white border border-[#EADBBA] rounded-lg p-1.5 text-center text-xs font-bold text-stone-900 focus:outline-none">
+                  <span class="text-xs text-stone-500">g</span>
+                </div>
+              </div>
+              <input type="range" id="calcWeightRange" min="1" max="250" value="25" class="w-full cursor-pointer">
+            </div>
+
+            <!-- Making Charges -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-stone-700">Making Charges (%)</label>
+                <div class="flex items-center gap-1">
+                  <input type="number" id="calcMaking" value="10" min="0" max="30" step="0.5" oninput="calculateGoldPrice()" class="w-20 bg-white border border-[#EADBBA] rounded-lg p-1.5 text-center text-xs font-bold text-stone-900 focus:outline-none">
+                  <span class="text-xs text-stone-500">%</span>
+                </div>
+              </div>
+              <p class="text-[11px] text-stone-500">Standard handcrafted making charges at AR JEWELLERY start from 8% to 14%.</p>
+            </div>
+          </div>
+
+          <!-- Right Calculation Breakdown Card -->
+          <div class="bg-white border border-[#EADBBA] rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+            <div class="space-y-3 text-xs">
+              <div class="font-serif font-bold text-stone-900 text-sm border-b border-stone-200 pb-2">
+                Itemized Cost Breakdown
+              </div>
+
+              <div class="flex justify-between text-stone-600">
+                <span>Gold Rate Applied:</span>
+                <span class="font-bold text-stone-900" id="outRatePerGram">₹7,750 / g</span>
+              </div>
+              <div class="flex justify-between text-stone-600">
+                <span>Raw Bullion Value:</span>
+                <span class="font-bold text-stone-900" id="outRawGold">₹1,93,750</span>
+              </div>
+              <div class="flex justify-between text-stone-600">
+                <span>Crafting & Making Charges:</span>
+                <span class="font-bold text-stone-900" id="outMakingCharges">₹19,375</span>
+              </div>
+              <div class="flex justify-between text-stone-600">
+                <span>GST (3% as per regulations):</span>
+                <span class="font-bold text-stone-900" id="outGstCharges">₹6,394</span>
+              </div>
+
+              <div class="border-t border-stone-200 pt-3 flex justify-between items-baseline">
+                <span class="font-serif font-black text-stone-900 text-sm">Estimated Total Price:</span>
+                <span class="font-serif font-black text-2xl text-amber-800" id="outGrandTotal">₹2,19,519</span>
+              </div>
+            </div>
+
+            <!-- WhatsApp Quotation Sharing Button -->
+            <button 
+              onclick="shareCustomQuote()" 
+              class="w-full mt-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow transition cursor-pointer">
+              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.203c.044.072.044.419-.1.824z"/>
+              </svg>
+              <span>Send This Quotation on WhatsApp</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE HERITAGE & ASSURANCE (WHITE & GOLD) -->
+  <section id="aboutSection" class="py-16 bg-[#FAF8F5] fade-up-init">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="text-xs uppercase font-bold text-amber-800 tracking-wider">Heritage & Integrity</span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 mt-1">
+            AR JEWELLERY Flagship Store
+          </h2>
+          <p class="text-stone-600 text-xs sm:text-sm mt-3 leading-relaxed">
+            AR Jewellery is your trusted destination for certified 916 hallmarked traditional, bridal, and contemporary gold jewellery. We offer transparent pricing, customized craftsmanship, and pan-India insured delivery.
+          </p>
+
+          <div class="mt-6 space-y-3 text-xs text-stone-700">
+            <div>📍 <strong class="text-stone-900">Showroom Locations:</strong> Main Road, Jewellery Market, Hyderabad & Vijayawada</div>
+            <div>📞 <strong class="text-stone-900">Direct Helpline:</strong> Dedicated Customer Support / WhatsApp Orders Active</div>
+            <div>⏰ <strong class="text-stone-900">Store Hours:</strong> 10:00 AM – 9:30 PM (Open 7 Days)</div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-[#EADBBA] p-8 rounded-3xl text-center shadow-sm">
+          <h3 class="font-serif font-bold text-lg text-stone-900">Looking for Custom Jewellery Designs?</h3>
+          <p class="text-xs text-stone-600 mt-2">Chat directly with our Master Goldsmith on WhatsApp with your reference pictures!</p>
+          <button onclick="openWhatsAppQueryModal('Custom Bridal Ornaments Inquiry & Custom Goldsmithing')" class="mt-5 inline-flex items-center gap-2 py-3 px-6 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition shadow cursor-pointer">
+            <span>💬 Chat on WhatsApp with Master Jeweller</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (CLEAN LUXURY WHITE & GOLD) -->
+  <footer class="bg-white border-t border-[#EADBBA] py-10 text-stone-600 text-xs">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/logo.jpg" alt="AR JEWELLERY Logo" class="w-10 h-10 rounded-full border border-amber-400 object-cover shadow-sm">
+        <div>
+          <span class="font-serif font-bold text-stone-900 text-sm">AR JEWELLERY</span>
+          <span class="text-stone-500 ml-2">| 100% BIS 916 Certified Jewellery</span>
+        </div>
+      </div>
+
+      <div class="text-center sm:text-right text-stone-500 text-[11px]">
+        © 2026 AR JEWELLERY. All Rights Reserved. • 100% Certified 916 Hallmark Ornaments
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================== -->
+  <!-- 1. AUTH & GATEWAY MODAL (CUSTOMER LOGIN / NEW REGISTER / OWNER) -->
+  <!-- ======================================================== -->
+  <div id="authGatewayModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl animate-scale-in text-stone-900">
+      
+      <!-- Close / Dismiss Modal Button -->
+      <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 p-2 cursor-pointer" title="Close">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Brand Header -->
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 mx-auto mb-2.5 rounded-full p-0.5 bg-gradient-to-tr from-amber-600 to-yellow-400 shadow-md">
+          <img src="assets/images/logo.jpg" alt="AR JEWELLERY Logo" class="w-full h-full object-cover rounded-full">
+        </div>
+        <h3 class="font-serif font-black text-xl text-stone-900 tracking-wider">AR JEWELLERY</h3>
+        <p class="text-xs text-stone-500 mt-0.5">Luxury Gold & Diamond Shopping</p>
+      </div>
+
+      <!-- Top Tab Switcher: [Customer Portal] vs [Store Owner / Admin] -->
+      <div class="flex bg-stone-100 p-1 rounded-xl mb-5 text-xs font-bold border border-stone-200">
+        <button 
+          id="tabCustomerBtn"
+          onclick="switchGatewayView('customer-login')" 
+          class="flex-1 py-2 text-center rounded-lg transition cursor-pointer bg-white text-amber-800 shadow-sm border-b-2 border-amber-600">
+          🛍️ Customer Login
+        </button>
+        <button 
+          id="tabAdminBtn"
+          onclick="switchGatewayView('admin-login')" 
+          class="flex-1 py-2 text-center rounded-lg transition cursor-pointer text-stone-500 hover:text-stone-800">
+          👑 Shop Owner / Admin
+        </button>
+      </div>
+
+      <!-- Error Notification Box -->
+      <div id="customerAuthError" class="hidden mb-4 p-3 rounded-xl bg-rose-50 text-rose-700 text-xs font-bold border border-rose-200"></div>
+      <div id="adminAuthError" class="hidden mb-4 p-3 rounded-xl bg-rose-50 text-rose-700 text-xs font-bold border border-rose-200"></div>
+
+      <!-- VIEW A: CUSTOMER LOGIN FORM -->
+      <div id="viewCustomerLogin" class="space-y-4">
+        <form onsubmit="handleCustomerLoginSubmit(event)" class="space-y-3.5">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Email or Mobile Number
+            </label>
+            <input 
+              type="text" 
+              name="loginIdentifier" 
+              required 
+              placeholder="e.g. priya.sharma99@gmail.com or 9848012345" 
+              class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-3 text-xs text-stone-900 focus:border-amber-600 focus:outline-none transition">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Password
+            </label>
+            <input 
+              type="password" 
+              name="loginPassword" 
+              required 
+              placeholder="Enter your password" 
+              class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-3 text-xs text-stone-900 focus:border-amber-600 focus:outline-none transition">
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-3.5 rounded-xl bg-gold-btn text-white font-black text-xs uppercase tracking-wider shadow hover:shadow-md transition mt-2 cursor-pointer">
+            Login to Account
+          </button>
+        </form>
+
+        <!-- "I Don't Have an Account" Switcher Button -->
+        <div class="pt-3 border-t border-stone-200 text-center space-y-2">
+          <p class="text-xs text-stone-600">
+            Don't have an account?
+          </p>
+          <button 
+            type="button"
+            onclick="switchGatewayView('customer-register')" 
+            class="w-full py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-amber-900 font-bold text-xs uppercase tracking-wider border border-[#EADBBA] transition cursor-pointer">
+            ✨ I don't have an account (Register Here)
+          </button>
+          
+          <button 
+            type="button" 
+            onclick="dismissGatewayModal()" 
+            class="text-[11px] text-stone-500 hover:text-stone-800 underline block mx-auto pt-1 cursor-pointer">
+            Continue browsing store as Guest →
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW B: NEW CUSTOMER REGISTRATION FORM -->
+      <div id="viewCustomerRegister" class="hidden space-y-4">
+        <div class="text-center pb-2">
+          <h4 class="font-serif font-bold text-stone-900 text-sm">Create New Customer Account</h4>
+          <p class="text-[11px] text-stone-500">Register with your details to shop and track jewellery</p>
+        </div>
+
+        <form onsubmit="handleCustomerRegistrationSubmit(event)" class="space-y-3">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Full Name <span class="text-rose-600">*</span>
+            </label>
+            <input 
+              type="text" 
+              name="regFullName" 
+              required 
+              placeholder="e.g. S. Lakshmi Devi" 
+              class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-xs text-stone-900 focus:border-amber-600 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Mobile Number <span class="text-rose-600">*</span>
+            </label>
+            <input 
+              type="tel" 
+              name="regMobile" 
+              required 
+              placeholder="e.g. 9876543210" 
+              class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-xs text-stone-900 focus:border-amber-600 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Gmail / Email Address <span class="text-rose-600">*</span>
+            </label>
+            <input 
+              type="email" 
+              name="regEmail" 
+              required 
+              placeholder="e.g. lakshmi.devi@gmail.com" 
+              class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-xs text-stone-900 focus:border-amber-600 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Enter New Password <span class="text-rose-600">*</span>
+            </label>
+            <input 
+              type="password" 
+              name="regPassword" 
+              required 
+              placeholder="At least 6 characters" 
+              class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-xs text-stone-900 focus:border-amber-600 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Confirm Password <span class="text-rose-600">*</span>
+            </label>
+            <input 
+              type="password" 
+              name="regConfirmPassword" 
+              required 
+              placeholder="Re-enter password" 
+              class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-xs text-stone-900 focus:border-amber-600 focus:outline-none">
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-3.5 rounded-xl bg-gold-btn text-white font-black text-xs uppercase tracking-wider shadow hover:shadow-md transition mt-2 cursor-pointer">
+            Confirm & Register Account
+          </button>
+        </form>
+
+        <div class="pt-2 text-center">
+          <p class="text-xs text-stone-600">Already registered?</p>
+          <button 
+            type="button" 
+            onclick="switchGatewayView('customer-login')" 
+            class="text-xs text-amber-800 font-bold hover:underline cursor-pointer">
+            ← Back to Customer Login
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW C: SHOP OWNER / ADMIN LOGIN FORM -->
+      <div id="viewAdminLogin" class="hidden space-y-4">
+        <div class="text-center p-3 rounded-xl bg-amber-50 border border-amber-200">
+          <span class="text-lg">🔐</span>
+          <h4 class="font-serif font-bold text-stone-900 text-xs">Authorized Store Owner Portal</h4>
+          <p class="text-[10px] text-stone-500">Restricted to Asma and authorized management only</p>
+        </div>
+
+        <form onsubmit="handleAdminLoginSubmit(event)" class="space-y-3.5">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Admin User ID
+            </label>
+            <input 
+              type="text" 
+              name="adminUser" 
+              required 
+              placeholder="Enter AsmaGold" 
+              class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-3 text-xs text-stone-900 focus:border-amber-600 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+              Admin Password
+            </label>
+            <input 
+              type="password" 
+              name="adminPass" 
+              required 
+              placeholder="Enter Asma@123" 
+              class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-3 text-xs text-stone-900 focus:border-amber-600 focus:outline-none">
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full py-3.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-amber-300 font-black text-xs uppercase tracking-wider shadow transition mt-2 cursor-pointer">
+            Verify & Enter Owner Hub
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 2. MY PREFERENCES MODAL (FUNCTIONAL CUSTOMER PREFERENCES) -->
+  <!-- ======================================================== -->
+  <div id="preferencesModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl max-h-[90vh] overflow-y-auto text-stone-900 animate-scale-in">
+      
+      <button onclick="closePreferencesModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 p-2 cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-stone-200">
+        <span class="text-2xl">⚙️</span>
+        <div>
+          <h3 class="text-xl font-serif font-black text-stone-900">My Shopping Preferences</h3>
+          <p class="text-xs text-stone-500">Personalize your jewellery styles, ring sizes, and live alerts</p>
+        </div>
+      </div>
+
+      <form onsubmit="handleSavePreferences(event)" class="space-y-5 text-xs">
+        
+        <!-- Preferred Karat -->
+        <div>
+          <label class="block font-bold uppercase tracking-wider text-stone-700 mb-2">Preferred Gold Purity</label>
+          <div class="grid grid-cols-3 gap-2">
+            <label class="flex items-center gap-2 p-2.5 rounded-xl border border-stone-200 hover:border-amber-400 cursor-pointer bg-stone-50">
+              <input type="radio" name="prefKarat" value="22" checked class="text-amber-600 focus:ring-amber-500">
+              <span class="font-bold text-stone-800">22K Gold</span>
+            </label>
+            <label class="flex items-center gap-2 p-2.5 rounded-xl border border-stone-200 hover:border-amber-400 cursor-pointer bg-stone-50">
+              <input type="radio" name="prefKarat" value="24" class="text-amber-600 focus:ring-amber-500">
+              <span class="font-bold text-stone-800">24K Bullion</span>
+            </label>
+            <label class="flex items-center gap-2 p-2.5 rounded-xl border border-stone-200 hover:border-amber-400 cursor-pointer bg-stone-50">
+              <input type="radio" name="prefKarat" value="18" class="text-amber-600 focus:ring-amber-500">
+              <span class="font-bold text-stone-800">18K Diamond</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Preferred Categories -->
+        <div>
+          <label class="block font-bold uppercase tracking-wider text-stone-700 mb-2">Favorite Collections to Highlight</label>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <label class="flex items-center gap-2 p-2 rounded-lg bg-stone-50 border border-stone-200 cursor-pointer">
+              <input type="checkbox" name="prefCategory" value="bridal" checked class="rounded text-amber-600">
+              <span>Bridal Sets</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded-lg bg-stone-50 border border-stone-200 cursor-pointer">
+              <input type="checkbox" name="prefCategory" value="necklace" checked class="rounded text-amber-600">
+              <span>Necklaces & Harams</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded-lg bg-stone-50 border border-stone-200 cursor-pointer">
+              <input type="checkbox" name="prefCategory" value="bangles" checked class="rounded text-amber-600">
+              <span>Bangles & Kadas</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded-lg bg-stone-50 border border-stone-200 cursor-pointer">
+              <input type="checkbox" name="prefCategory" value="earrings" class="rounded text-amber-600">
+              <span>Earrings & Jhumkas</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded-lg bg-stone-50 border border-stone-200 cursor-pointer">
+              <input type="checkbox" name="prefCategory" value="rings" class="rounded text-amber-600">
+              <span>Rings & Solitaires</span>
+            </label>
+            <label class="flex items-center gap-2 p-2 rounded-lg bg-stone-50 border border-stone-200 cursor-pointer">
+              <input type="checkbox" name="prefCategory" value="coins" class="rounded text-amber-600">
+              <span>24K Gold Coins</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Size Preferences -->
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-bold uppercase tracking-wider text-stone-700 mb-1">Standard Ring Size</label>
+            <select id="prefRingSize" name="prefRingSize" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-xs text-stone-900 focus:outline-none">
+              <option value="10">Size 10 (15.7 mm)</option>
+              <option value="12">Size 12 (16.5 mm)</option>
+              <option value="14" selected>Size 14 (17.2 mm - Most Common)</option>
+              <option value="16">Size 16 (17.8 mm)</option>
+              <option value="18">Size 18 (18.5 mm)</option>
+              <option value="20">Size 20 (19.2 mm)</option>
+              <option value="22">Size 22 (19.8 mm)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-bold uppercase tracking-wider text-stone-700 mb-1">Standard Bangle Size</label>
+            <select id="prefBangleSize" name="prefBangleSize" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-xs text-stone-900 focus:outline-none">
+              <option value="2.2">Size 2.2 (Small)</option>
+              <option value="2.4" selected>Size 2.4 (Medium - Standard)</option>
+              <option value="2.6">Size 2.6 (Regular)</option>
+              <option value="2.8">Size 2.8 (Large)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Notification Alerts -->
+        <div>
+          <label class="block font-bold uppercase tracking-wider text-stone-700 mb-2">Notification & Communication Alerts</label>
+          <div class="space-y-2">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="prefDailyRate" name="prefDailyRate" checked class="rounded text-amber-600">
+              <span class="text-stone-700">Receive Daily 10:00 AM Live Gold Rate SMS/Email alerts</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="prefOrderAlert" name="prefOrderAlert" checked class="rounded text-amber-600">
+              <span class="text-stone-700">Real-time WhatsApp tracking & BIS hallmarking dispatch updates</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="prefDiscountAlert" name="prefDiscountAlert" checked class="rounded text-amber-600">
+              <span class="text-stone-700">Festive making charge discounts and coupon alerts (AR10)</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-gold-btn text-white font-black text-xs uppercase tracking-wider shadow hover:shadow-md transition mt-4 cursor-pointer">
+          Save My Preferences
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 3. MANAGE ADDRESS MODAL (SAVED DELIVERY ADDRESSES) -->
+  <!-- ======================================================== -->
+  <div id="addressModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-8 max-w-xl w-full relative shadow-2xl max-h-[90vh] overflow-y-auto text-stone-900 animate-scale-in">
+      
+      <button onclick="closeAddressModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 p-2 cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="flex items-center justify-between mb-6 pb-4 border-b border-stone-200">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">📍</span>
+          <div>
+            <h3 class="text-xl font-serif font-black text-stone-900">Manage Delivery Addresses</h3>
+            <p class="text-xs text-stone-500">Add or manage shipping destinations for insured jewellery delivery</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add New Address Toggle Button -->
+      <div class="mb-4">
+        <button 
+          id="toggleAddAddressBtn"
+          onclick="toggleAddAddressForm(true)" 
+          class="w-full py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition cursor-pointer">
+          <span>+ Add New Delivery Address</span>
+        </button>
+      </div>
+
+      <!-- Add New Address Form (Hidden by default) -->
+      <div id="addNewAddressFormContainer" class="hidden mb-6 p-4 rounded-2xl bg-stone-50 border border-stone-300">
+        <div class="flex justify-between items-center mb-3">
+          <h4 class="font-serif font-bold text-stone-900 text-sm">Add New Address</h4>
+          <button onclick="toggleAddAddressForm(false)" class="text-stone-400 hover:text-stone-800 text-xs">✕ Cancel</button>
+        </div>
+
+        <form onsubmit="handleAddAddressSubmit(event)" class="space-y-3 text-xs">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-bold text-stone-700 mb-1">Address Label</label>
+              <select name="addrTitle" class="w-full bg-white border border-stone-300 rounded-xl p-2 text-stone-900">
+                <option value="Home">Home</option>
+                <option value="Work / Office">Work / Office</option>
+                <option value="Parents / Family">Parents / Family</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-bold text-stone-700 mb-1">Recipient Name *</label>
+              <input type="text" name="addrName" required placeholder="Full Name" class="w-full bg-white border border-stone-300 rounded-xl p-2 text-stone-900">
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Mobile Number *</label>
+            <input type="tel" name="addrMobile" required placeholder="10-digit mobile number" class="w-full bg-white border border-stone-300 rounded-xl p-2 text-stone-900">
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Flat / House No, Building, Street *</label>
+            <input type="text" name="addrStreet" required placeholder="e.g. Flat 402, Royal Enclave, Road No. 12" class="w-full bg-white border border-stone-300 rounded-xl p-2 text-stone-900">
+          </div>
+
+          <div class="grid grid-cols-3 gap-2">
+            <div>
+              <label class="block font-bold text-stone-700 mb-1">City / Town *</label>
+              <input type="text" name="addrCity" required placeholder="Hyderabad" class="w-full bg-white border border-stone-300 rounded-xl p-2 text-stone-900">
+            </div>
+            <div>
+              <label class="block font-bold text-stone-700 mb-1">State *</label>
+              <input type="text" name="addrState" required placeholder="Telangana" class="w-full bg-white border border-stone-300 rounded-xl p-2 text-stone-900">
+            </div>
+            <div>
+              <label class="block font-bold text-stone-700 mb-1">Pincode *</label>
+              <input type="text" name="addrPincode" required placeholder="500034" class="w-full bg-white border border-stone-300 rounded-xl p-2 text-stone-900">
+            </div>
+          </div>
+
+          <button type="submit" class="w-full py-2.5 rounded-xl bg-gold-btn text-white font-bold text-xs uppercase tracking-wider shadow mt-2 cursor-pointer">
+            Save Address
+          </button>
+        </form>
+      </div>
+
+      <!-- Saved Addresses List -->
+      <div id="addressListContainer" class="space-y-3">
+        <!-- Rendered by renderAddressList() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 4. MY SAVED WISHLIST MODAL -->
+  <!-- ======================================================== -->
+  <div id="wishlistModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-8 max-w-xl w-full relative shadow-2xl max-h-[90vh] overflow-y-auto text-stone-900 animate-scale-in">
+      
+      <button onclick="closeWishlistModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 p-2 cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-stone-200">
+        <span class="text-2xl text-rose-600">❤️</span>
+        <div>
+          <h3 class="text-xl font-serif font-black text-stone-900">My Saved Wishlist</h3>
+          <p class="text-xs text-stone-500">Your curated collection of royal gold ornaments</p>
+        </div>
+      </div>
+
+      <div id="wishlistItemsContainer" class="space-y-3">
+        <!-- Rendered by openWishlistModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 5. MY ORDERS MODAL (TRACKING & CERTIFICATES) -->
+  <!-- ======================================================== -->
+  <div id="ordersModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-8 max-w-2xl w-full relative shadow-2xl max-h-[90vh] overflow-y-auto text-stone-900">
+      
+      <button onclick="closeOrdersModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 p-2 cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-stone-200">
+        <span class="text-2xl">📦</span>
+        <div>
+          <h3 class="text-xl font-serif font-black text-stone-900">My Orders & Purchases</h3>
+          <p class="text-xs text-stone-500">Track delivery status & certified BIS Hallmarking progress</p>
+        </div>
+      </div>
+
+      <div id="ordersListContainer" class="space-y-4">
+        <!-- Rendered by openOrdersModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 6. PRODUCT DETAILS BREAKDOWN MODAL -->
+  <!-- ======================================================== -->
+  <div id="productDetailModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-8 max-w-2xl w-full relative shadow-2xl max-h-[90vh] overflow-y-auto text-stone-900">
+      
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 p-2 cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div id="productDetailContent">
+        <!-- Rendered by openProductModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 7. CHECKOUT MODAL (DELIVERY & SAVED ADDRESS PICKER) -->
+  <!-- ======================================================== -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl max-h-[90vh] overflow-y-auto text-stone-900">
+      
+      <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 p-2 cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="mb-5 pb-3 border-b border-stone-200">
+        <h3 class="text-lg font-serif font-black text-stone-900">Insured Delivery Checkout</h3>
+        <p class="text-xs text-stone-500">Provide shipping address for tamper-proof transit</p>
+      </div>
+
+      <form onsubmit="handleCheckoutSubmit(event)" class="space-y-3.5">
+        <!-- Pick from Saved Addresses selector -->
+        <div id="checkoutSavedAddressSelector"></div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Customer Full Name</label>
+          <input type="text" id="checkoutName" name="custName" required placeholder="e.g. S. Lakshmi Devi" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-3 text-xs text-stone-900 focus:outline-none focus:border-amber-600">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Mobile / WhatsApp Number</label>
+          <input type="tel" id="checkoutMobile" name="custMobile" required placeholder="e.g. 9876543210" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-3 text-xs text-stone-900 focus:outline-none focus:border-amber-600">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Email Address</label>
+          <input type="email" id="checkoutEmail" name="custEmail" required placeholder="e.g. lakshmi.devi@gmail.com" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-3 text-xs text-stone-900 focus:outline-none focus:border-amber-600">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Delivery Address & Pincode</label>
+          <textarea id="checkoutAddress" name="custAddress" required rows="2" placeholder="House / Flat No, Street, Landmark, City & Pincode" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-3 text-xs text-stone-900 focus:outline-none focus:border-amber-600"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">Select Payment Mode</label>
+          <select name="paymentMethod" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-3 text-xs font-semibold text-stone-900 focus:outline-none">
+            <option value="UPI (Google Pay / PhonePe)">UPI (Google Pay / PhonePe / Paytm)</option>
+            <option value="Net Banking / NEFT / RTGS">Net Banking / NEFT / RTGS</option>
+            <option value="Credit / Debit Card">Credit / Debit Card (Visa, MasterCard)</option>
+            <option value="Cash on Delivery">Cash on Delivery (Insured Courier)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-gold-btn text-white font-black text-xs uppercase tracking-wider shadow-lg mt-3 cursor-pointer gold-gleam">
+          Confirm & Place Order
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 8. ORDER SUCCESS MODAL -->
+  <!-- ======================================================== -->
+  <div id="successModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white border-2 border-emerald-400 rounded-3xl p-6 sm:p-8 max-w-sm w-full relative shadow-2xl text-center text-stone-900 animate-scale-in">
+      <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl">
+        ✓
+      </div>
+      <h3 class="text-xl font-serif font-black text-stone-900">Order Placed Successfully!</h3>
+      <p class="text-xs text-stone-500 mt-1">Thank you for choosing AR JEWELLERY.</p>
+
+      <div class="my-4 p-3 rounded-xl bg-stone-50 border border-stone-200 text-xs text-left space-y-1">
+        <div class="flex justify-between">
+          <span class="text-stone-500">Order Reference:</span>
+          <span id="successOrderId" class="font-bold text-amber-800">AR-829104</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-stone-500">Total Amount:</span>
+          <span id="successOrderAmount" class="font-bold text-stone-900">₹3,60,000</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-stone-500">Certification:</span>
+          <span class="font-bold text-emerald-700">100% BIS 916 Hallmark</span>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button id="successWhatsAppBtn" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow">
+          <span>💬 Confirm Order on WhatsApp</span>
+        </button>
+        <button onclick="closeSuccessModal()" class="w-full py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs uppercase tracking-wider transition cursor-pointer">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 9. SLIDING CART DRAWER -->
+  <!-- ======================================================== -->
+  <div id="cartBackdrop" onclick="toggleCartDrawer(false)" class="fixed inset-0 z-40 bg-black/60 hidden transition-opacity"></div>
+  <div id="cartDrawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-white border-l border-[#EADBBA] shadow-2xl flex flex-col justify-between translate-x-full">
+    
+    <div class="p-4 sm:p-5 border-b border-stone-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🛍️</span>
+        <h3 class="font-serif font-black text-stone-900 text-base">Your Shopping Bag</h3>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="p-2 text-stone-400 hover:text-stone-800 cursor-pointer">
+        ✕
+      </button>
+    </div>
+
+    <div id="cartDrawerItems" class="flex-1 overflow-y-auto p-4 space-y-3">
+      <!-- Rendered by renderCartDrawer() -->
+    </div>
+
+    <div id="cartDrawerSummary" class="p-4 sm:p-5 bg-[#FAF8F5] border-t border-stone-200">
+      <!-- Rendered by renderCartDrawer() -->
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 10. WHATSAPP CUSTOMER QUERY MODAL -->
+  <!-- ======================================================== -->
+  <div id="whatsappQueryModal" onclick="if(event.target === this) closeWhatsAppQueryModal()" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
+    <div class="bg-white border-2 border-emerald-500/50 rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl animate-scale-in text-left text-stone-900">
+      
+      <button onclick="closeWhatsAppQueryModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 p-2 transition cursor-pointer" title="Close">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4 pb-4 border-b border-stone-200">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl border border-emerald-300 shrink-0">
+          <svg class="w-7 h-7 fill-emerald-600" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.203c.044.072.044.419-.1.824z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-lg font-serif font-black text-stone-900">WhatsApp Inquiry Desk</h3>
+          <p class="text-xs text-stone-500">Direct Support with Store Management & Master Goldsmith</p>
+        </div>
+      </div>
+
+      <p class="text-xs text-stone-600 mb-4 bg-emerald-50 p-3 rounded-xl border border-emerald-200 leading-relaxed">
+        Please enter your details below. Clicking <strong>"Send"</strong> will open WhatsApp with your inquiry starting with <em>"Hi Asma"</em>.
+      </p>
+
+      <form onsubmit="handleWhatsAppQuerySubmit(event)" class="space-y-3.5">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+            Name of the Customer <span class="text-rose-600 font-bold">* Mandatory</span>
+          </label>
+          <input 
+            type="text" 
+            id="waCustName" 
+            required 
+            placeholder="e.g. S. Lakshmi Devi" 
+            class="w-full bg-[#FAF8F5] border border-stone-300 focus:border-emerald-500 rounded-xl p-3 text-xs text-stone-900 placeholder-stone-400 focus:outline-none transition">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+            Mobile Number <span class="text-rose-600 font-bold">* Mandatory</span>
+          </label>
+          <input 
+            type="tel" 
+            id="waCustMobile" 
+            required 
+            placeholder="e.g. 9876543210" 
+            class="w-full bg-[#FAF8F5] border border-stone-300 focus:border-emerald-500 rounded-xl p-3 text-xs text-stone-900 placeholder-stone-400 focus:outline-none transition">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+            Place / City <span class="text-rose-600 font-bold">* Mandatory</span>
+          </label>
+          <input 
+            type="text" 
+            id="waCustPlace" 
+            required 
+            placeholder="e.g. Hyderabad / Vijayawada / Guntur" 
+            class="w-full bg-[#FAF8F5] border border-stone-300 focus:border-emerald-500 rounded-xl p-3 text-xs text-stone-900 placeholder-stone-400 focus:outline-none transition">
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-stone-500 mb-1.5">Quick Inquiry Presets:</label>
+          <div class="flex flex-wrap gap-1.5">
+            <button type="button" onclick="setWaQueryPreset('I would like to inquire about Bridal Gold Haram sets and making charges.')" class="text-[10px] bg-stone-100 hover:bg-stone-200 text-stone-800 px-2.5 py-1 rounded-lg border border-stone-300 transition cursor-pointer">
+              💍 Bridal Sets
+            </button>
+            <button type="button" onclick="setWaQueryPreset('What is today\'s live 22K/24K gold rate at AR JEWELLERY?')" class="text-[10px] bg-stone-100 hover:bg-stone-200 text-stone-800 px-2.5 py-1 rounded-lg border border-stone-300 transition cursor-pointer">
+              📈 Live Gold Rate
+            </button>
+            <button type="button" onclick="setWaQueryPreset('I want to order custom jewellery with my own design reference image.')" class="text-[10px] bg-stone-100 hover:bg-stone-200 text-stone-800 px-2.5 py-1 rounded-lg border border-stone-300 transition cursor-pointer">
+              🎨 Custom Design
+            </button>
+            <button type="button" onclick="setWaQueryPreset('Please share details about your Monthly Gold Savings Scheme.')" class="text-[10px] bg-stone-100 hover:bg-stone-200 text-stone-800 px-2.5 py-1 rounded-lg border border-stone-300 transition cursor-pointer">
+              🪙 Gold Scheme
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
+            Your Query / Requirements
+          </label>
+          <textarea 
+            id="waCustQuery" 
+            rows="2" 
+            placeholder="Type your message or inquiry here..." 
+            class="w-full bg-[#FAF8F5] border border-stone-300 focus:border-emerald-500 rounded-xl p-3 text-xs text-stone-900 placeholder-stone-400 focus:outline-none transition"></textarea>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wider transition shadow-lg flex items-center justify-center gap-2 mt-2 cursor-pointer">
+          <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.203c.044.072.044.419-.1.824z"/>
+          </svg>
+          <span>Send Inquiry to WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 11. ADMIN & SELLER MANAGEMENT HUB (OWNER RESTRICTED) -->
+  <!-- ======================================================== -->
+  <section id="adminPortalSection" class="hidden min-h-screen bg-stone-50 py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto space-y-8">
+      
+      <!-- Top Header -->
+      <div class="bg-white border border-[#EADBBA] rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+        <div class="flex items-center gap-4">
+          <img src="assets/images/logo.jpg" alt="AR JEWELLERY Logo" class="w-14 h-14 rounded-full border-2 border-amber-500 object-cover shadow-md">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold text-[10px] uppercase border border-amber-300">
+                Store Owner Dashboard
+              </span>
+              <span class="text-xs text-stone-500">Live Management Mode</span>
+            </div>
+            <h1 class="text-2xl font-serif font-black text-stone-900 mt-1">
+              AR JEWELLERY - Management & Order Report
+            </h1>
+            <p class="text-xs text-stone-500">Manage gold catalog, update live rates, track real-time customer purchases</p>
+          </div>
+        </div>
+
+        <button onclick="closeAdminPortal()" class="px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-amber-300 font-bold text-xs uppercase tracking-wider shadow transition cursor-pointer">
+          ← Return to Store View
+        </button>
+      </div>
+
+      <!-- Real-Time Customer Order Notifications Widget -->
+      <div class="bg-white border-2 border-amber-300 rounded-3xl p-6 sm:p-8 shadow-sm">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-stone-200">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl shrink-0">
+              🔔
+            </span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg font-serif font-bold text-stone-900">Live Customer Purchase Notifications</h3>
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-600 animate-pulse" title="Live Listener Active"></span>
+              </div>
+              <p class="text-xs text-stone-500">Instant audio & visual alerts whenever any customer places a jewellery order</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="triggerTestOrderNotification()" class="px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-xs font-bold transition cursor-pointer">
+              🔔 Test Order Alert
+            </button>
+            <button onclick="markAllNotificationsRead()" class="px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold transition cursor-pointer">
+              Mark All Read
+            </button>
+            <button onclick="clearAllNotifications()" class="px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-semibold transition cursor-pointer">
+              Clear All
+            </button>
+          </div>
+        </div>
+
+        <div id="adminNotificationFeed" class="space-y-2.5 max-h-72 overflow-y-auto pr-1">
+          <!-- Rendered by updateAdminNotificationUI() -->
+        </div>
+      </div>
+
+      <!-- Live KPI Stat Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div class="admin-card p-6">
+          <div class="text-xs font-bold uppercase text-stone-500 tracking-wider">Total Sales Turnover</div>
+          <div class="text-3xl font-serif font-black text-amber-800 mt-2" id="adminStatRevenue">₹8,59,000</div>
+          <div class="text-[11px] text-emerald-700 font-semibold mt-1">● Live Verified Bookings</div>
+        </div>
+
+        <div class="admin-card p-6">
+          <div class="text-xs font-bold uppercase text-stone-500 tracking-wider">Total Orders Processed</div>
+          <div class="text-3xl font-serif font-black text-stone-900 mt-2" id="adminStatOrders">3</div>
+          <div class="text-[11px] text-stone-500 mt-1">● Pan-India Insured Transit</div>
+        </div>
+
+        <div class="admin-card p-6">
+          <div class="text-xs font-bold uppercase text-stone-500 tracking-wider">Active Jewellery Catalog</div>
+          <div class="text-3xl font-serif font-black text-amber-800 mt-2" id="adminStatProducts">12</div>
+          <div class="text-[11px] text-stone-500 mt-1">● 100% BIS 916 Certified</div>
+        </div>
+      </div>
+
+      <!-- Add New Product Form -->
+      <div class="bg-white border border-[#EADBBA] rounded-3xl p-6 sm:p-8 shadow-sm">
+        <div class="mb-5 pb-3 border-b border-stone-200">
+          <h3 class="text-lg font-serif font-bold text-stone-900">Add New Jewellery Item to Store</h3>
+          <p class="text-xs text-stone-500">Publish new ornaments directly into the customer-facing catalog</p>
+        </div>
+
+        <form onsubmit="handleAddProductSubmit(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Product Name</label>
+            <input type="text" name="prodName" required placeholder="e.g. Royal Antique Emerald Choker" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none focus:border-amber-600">
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Category</label>
+            <select name="prodCategory" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none">
+              <option value="bridal">Bridal Sets</option>
+              <option value="necklace">Necklaces & Harams</option>
+              <option value="bangles">Bangles & Kadas</option>
+              <option value="earrings">Earrings & Jhumkas</option>
+              <option value="rings">Rings & Solitaires</option>
+              <option value="coins">24K Coins & Bars</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Net Weight (Grams)</label>
+            <input type="number" step="0.01" name="prodWeight" required placeholder="e.g. 35.50" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none focus:border-amber-600">
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Gold Karat</label>
+            <select name="prodKarat" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none">
+              <option value="22">22 Karat (BIS 916 Hallmark)</option>
+              <option value="24">24 Karat (999 Pure Bullion)</option>
+              <option value="18">18 Karat (Diamond Gold)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Making Charges (%)</label>
+            <input type="number" step="0.1" name="prodMaking" value="10" required class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none focus:border-amber-600">
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Highlight Badge</label>
+            <input type="text" name="prodBadge" placeholder="e.g. Bridal Pick / Bestseller" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none">
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="block font-bold text-stone-700 mb-1">Image URL</label>
+            <input type="url" name="prodImage" placeholder="https://images.unsplash.com/..." class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Description</label>
+            <input type="text" name="prodDesc" placeholder="Crafted with antique finishing..." class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none">
+          </div>
+
+          <div class="md:col-span-3 pt-2">
+            <button type="submit" class="py-3 px-8 rounded-xl bg-gold-btn text-white font-bold text-xs uppercase tracking-wider shadow cursor-pointer">
+              + Publish Jewellery Item to Store
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Manage Products Catalog Table -->
+      <div class="bg-white border border-[#EADBBA] rounded-3xl p-6 sm:p-8 shadow-sm">
+        <h3 class="text-lg font-serif font-bold text-stone-900 mb-4">Manage Active Products</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-stone-200 text-[11px] uppercase tracking-wider text-stone-500 font-bold bg-stone-50">
+                <th class="py-3 px-4">Jewellery Item</th>
+                <th class="py-3 px-4">Category</th>
+                <th class="py-3 px-4">Weight</th>
+                <th class="py-3 px-4">Calculated Price</th>
+                <th class="py-3 px-4">Badge</th>
+                <th class="py-3 px-4 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody id="adminProductsTableBody">
+              <!-- Rendered by renderAdminProductsTable() -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Orders Management Table -->
+      <div class="bg-white border border-[#EADBBA] rounded-3xl p-6 sm:p-8 shadow-sm">
+        <h3 class="text-lg font-serif font-bold text-stone-900 mb-4">Customer Orders & Status Fulfillment</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-stone-200 text-[11px] uppercase tracking-wider text-stone-500 font-bold bg-stone-50">
+                <th class="py-3 px-4">Order ID</th>
+                <th class="py-3 px-4">Customer Details</th>
+                <th class="py-3 px-4">Items Ordered</th>
+                <th class="py-3 px-4">Total Amount</th>
+                <th class="py-3 px-4">Status & Dispatch</th>
+              </tr>
+            </thead>
+            <tbody id="adminOrdersTableBody">
+              <!-- Rendered by renderAdminOrdersTable() -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Monthly Sales Summary Report -->
+      <div class="bg-white border border-[#EADBBA] rounded-3xl p-6 sm:p-8 shadow-sm">
+        <h3 class="text-lg font-serif font-bold text-stone-900 mb-4">Monthly Sales & Revenue Report</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-stone-200 text-[11px] uppercase tracking-wider text-stone-500 font-bold bg-stone-50">
+                <th class="py-3 px-4">Month</th>
+                <th class="py-3 px-4">Orders Count</th>
+                <th class="py-3 px-4">Turnover Revenue</th>
+                <th class="py-3 px-4">Average Order Value</th>
+              </tr>
+            </thead>
+            <tbody id="adminMonthlyReportTableBody">
+              <!-- Rendered by renderMonthlyReportTable() -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Live Bullion Rate Controller -->
+      <div class="bg-white border border-[#EADBBA] rounded-3xl p-6 sm:p-8 shadow-sm">
+        <h3 class="text-lg font-serif font-bold text-stone-900 mb-1">Live Bullion Rate Controller</h3>
+        <p class="text-xs text-stone-500 mb-4">Update today's bullion market rate across the store</p>
+
+        <form onsubmit="handleUpdateBullionRates(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs">
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">24K Bullion (1g)</label>
+            <input type="number" name="rate24k" value="8450" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">22K Gold (1g)</label>
+            <input type="number" name="rate22k" value="7750" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">18K Diamond Gold (1g)</label>
+            <input type="number" name="rate18k" value="6340" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-bold text-stone-700 mb-1">Pure Silver (1g)</label>
+            <input type="number" name="rateSilver" value="98" class="w-full bg-[#FAF8F5] border border-stone-300 rounded-xl p-2.5 text-stone-900 focus:outline-none">
+          </div>
+          <div class="sm:col-span-4 pt-2">
+            <button type="submit" class="py-2.5 px-6 rounded-xl bg-stone-900 hover:bg-stone-800 text-amber-300 font-bold text-xs uppercase tracking-wider shadow cursor-pointer">
+              Update Live Rates Across Store
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- FLOATING WHATSAPP BUTTON (NO NUMBER IN TITLE/TEXT) -->
+  <!-- ======================================================== -->
+  <button 
+    onclick="openWhatsAppQueryModal('General Jewellery Inquiry & Today Live Gold Rate')" 
+    class="whatsapp-floating border-0 cursor-pointer relative" 
+    title="Chat with us on WhatsApp"
+    type="button">
+    <div class="wa-pulse-ring"></div>
+    <div class="wa-pulse-ring wa-pulse-ring-2"></div>
+    <svg class="w-7 h-7 fill-current relative z-10" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.203c.044.072.044.419-.1.824z"/>
+    </svg>
+  </button>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="shopToast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full bg-stone-900 text-amber-300 font-bold text-xs uppercase tracking-wider shadow-2xl opacity-0 pointer-events-none translate-y-4 transition-all border border-amber-400">
+    Added to Bag
+  </div>
+
+  <script>
+    function shareCustomQuote() {
+      const weight = document.getElementById('calcWeight').value;
+      const karat = document.getElementById('calcKarat').value;
+      const making = document.getElementById('calcMaking').value;
+      const total = document.getElementById('outGrandTotal').textContent;
+      const msg = `Custom Price Estimate Inquiry:\n• Weight: ${weight}g\n• Karat: ${karat}K Gold\n• Making: ${making}%\n• Estimated Price: ${total}`;
+      openWhatsAppQueryModal(msg);
+    }
+  </script>
+
+  <!-- Application Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
